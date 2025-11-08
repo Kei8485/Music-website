@@ -17,6 +17,7 @@ navMenu.addEventListener("click", (e) => {
 document.addEventListener("click", () => {
   if (navMenu.classList.contains("main__nav--active")) {
     navMenu.classList.remove("main__nav--active");
+    removeSearch();
   }
 });
 
@@ -28,18 +29,36 @@ searchIcon.addEventListener("click", () => {
   });
 
   searchAnimation();
+
   searchContainer.classList.add("active");
 });
 
-// search transition
+// // search function
 const headerInput = document.querySelector(".header__input");
 const inputWrap = document.querySelector(".header__input-wrapper");
+const headerIcons = document.querySelectorAll(".header__icon");
+
 function searchAnimation() {
-  searchIcon.classList.add("search-icon-active");
-  headerInput.classList.add("header__input--active");
-  searchIcon.classList.remove("header__icon");
-  inputWrap.style.setProperty("--after-opacity", "1");
+  inputWrap.classList.add("header__input-wrapper--active");
+  searchIcon.classList.add("header__icon--active");
+  headerInput.style.display = "block";
 }
+
+function removeSearch() {
+  inputWrap.classList.remove("header__input-wrapper--active");
+  searchIcon.classList.remove("header__icon--active");
+  headerInput.style.display = "none";
+}
+
+headerInput.addEventListener("click", () => {
+  inputWrap.style.filter = "brightness(1.5)";
+});
+
+document.addEventListener("click", (e) => {
+  if (!inputWrap.contains(e.target)) {
+    inputWrap.style.filter = "";
+  }
+});
 
 // handle nav item clicks
 navItems.forEach((item) => {
@@ -50,9 +69,19 @@ navItems.forEach((item) => {
       view.classList.remove("active");
     });
 
+    const mainExploreContainer = document.querySelector(
+      ".main__explore-container"
+    );
     const selectedView = document.querySelector(`.main__${target}-container`);
+
     if (selectedView) {
       selectedView.classList.add("active");
+    }
+
+    if (!selectedView.contains(mainExploreContainer)) {
+      removeSearch();
+    } else {
+      searchAnimation();
     }
 
     if (navMenu.classList.contains("main__nav--active")) {

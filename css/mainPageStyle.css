@@ -319,55 +319,59 @@ header {
   object-fit: cover;
 }
 
+/* input */
+.header__icon.search-active {
+  width: 15px;
+  height: 15px;
+}
+
+#searchIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.header__input--active {
+  display: block;
+}
+
 .header__input {
-  position: relative;
-  left: 100%;
-  transform: translate(0%, 15%);
-  top: 0;
-  left: 0;
-  width: 0;
-  opacity: 0;
+  background: none;
+  outline: none;
+  border: none;
+  color: white;
+  display: flex;
+  width: 100%;
   padding-left: 10px;
+  display: none;
+  transition: width 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+}
+
+.header__input-wrapper {
+  display: flex;
+  opacity: 1;
+}
+
+.header__input-wrapper:hover {
+  filter: brightness(1.5);
+}
+
+.header__input-wrapper--active {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 200px;
   outline: none;
   color: white;
   border-radius: 8px;
   border: 1px solid transparent;
   background: linear-gradient(135deg, #5e3b84, #a02245, #7c2b61) border-box;
-  border-right: none;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
   box-shadow: 0 0 0 100vmax #000000e1 inset;
   transition: width 0.4s ease, opacity 0.3s ease;
   overflow: hidden;
 }
 
-.header__input-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-}
-
-.header__input-wrapper:has(.header__input:focus)::after,
-.header__input:focus {
-  opacity: 1;
-  filter: brightness(1.5);
-}
-.header__input-wrapper:has(.header__input:hover)::after,
-.header__input--active:hover {
-  filter: brightness(1.5);
-}
-
-/* Active — slide in */
-.header__input--active {
-  position: relative;
-  top: -10%;
-  width: 170px;
-  height: 23px;
-  opacity: 1;
-}
-
 .header__icon {
+  position: relative;
   align-self: center;
   width: 28px;
   height: 28px;
@@ -375,52 +379,7 @@ header {
   transition: transform 0.3s ease;
 }
 
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-50%) scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(1%) translateY(-5%) scale(1);
-    opacity: 1;
-  }
-}
-
-.search-icon-active {
-  position: relative;
-  top: 5%;
-  height: 1.5rem;
-  animation: slideInFromLeft 0.4s ease forwards;
-}
-
-.header__input-wrapper::after {
-  opacity: var(--after-opacity, 0);
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 80%;
-  bottom: 0;
-  right: 0;
-  transform: translate(15%, 13%);
-  border: 1px solid transparent;
-  background: linear-gradient(135deg, #5e3b84, #a02245, #7c2b61) border-box;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 0 100vmax #000000e1 inset;
-  width: 40px;
-  height: 21px;
-  z-index: -10;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.search-icon-active:hover {
-  filter: brightness(1.5);
-}
-
-.search-icon-active:active {
-  filter: brightness(2);
-}
+/* edit ^^^^ */
 
 .header__profile-name {
   color: white;
