@@ -13,14 +13,24 @@ main {
   z-index: 1;
 }
 
+/* displays for the showing the nav */
 .fade-in {
   display: none;
-}
-
-.fade-in.active {
-  display: flex;
   animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
+.fade-in.main__home-container--active {
+  display: flex;
+}
+
+.fade-in.main__explore-container--active {
+  display: flex;
+}
+
+.fade-in.main__genre-container--active {
+  display: flex;
+}
+
+/* displays for the showing the nav */
 
 .main__recent-playlist-container {
   margin: 10px 0;
@@ -511,10 +521,11 @@ main {
 
 /* explore container */
 .main__explore-container {
+  display: none;
 }
 
 /* genre container */
 
 .main__genre-container {
-  display: grid;
+  display: none;
 }

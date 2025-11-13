@@ -17,7 +17,6 @@ navMenu.addEventListener("click", (e) => {
 document.addEventListener("click", () => {
   if (navMenu.classList.contains("main__nav--active")) {
     navMenu.classList.remove("main__nav--active");
-    removeSearch();
   }
 });
 
@@ -52,16 +51,18 @@ navItems.forEach((item) => {
     const target = item.dataset.target;
 
     views.forEach((view) => {
-      view.classList.remove("active");
+      view.classList.remove(
+        "main__home-container--active",
+        "main__explore-container--active",
+        "main__genre-container--active"
+      );
+      console.log("dusgdhsa");
     });
 
-    const mainExploreContainer = document.querySelector(
-      ".main__explore-container"
-    );
     const selectedView = document.querySelector(`.main__${target}-container`);
 
     if (selectedView) {
-      selectedView.classList.add("active");
+      selectedView.classList.add(`main__${target}-container--active`);
     }
 
     if (navMenu.classList.contains("main__nav--active")) {
