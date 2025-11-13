@@ -19,15 +19,15 @@ main {
   animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .fade-in.main__home-container--active {
-  display: flex;
+  display: block;
 }
 
-.fade-in.main__explore-container--active {
-  display: flex;
+.fade-in.main__artist-container--active {
+  display: block;
 }
 
 .fade-in.main__genre-container--active {
-  display: flex;
+  display: block;
 }
 
 /* displays for the showing the nav */
@@ -64,6 +64,10 @@ main {
 
 .main__recent-play--hover:active {
   transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.main__recent-play--hover:hover {
   filter: brightness(1.2);
 }
 
@@ -519,13 +523,157 @@ main {
   transition: all 0.3s ease;
 }
 
-/* explore container */
-.main__explore-container {
-  display: none;
-}
-
 /* genre container */
 
 .main__genre-container {
   display: none;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.main__genre-heading-grid {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.main__genre-heading {
+  font-size: 2.2rem;
+  padding-top: 10px;
+}
+
+.main__genre-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(68, 79, 175);
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 8px;
+  height: 70px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  gap: 10px;
+}
+
+/* Active / click effect */
+.main__genre-card:active {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Hover effect for border, shadow, and gradient */
+.main__genre-card:hover {
+  border: 1px solid #a02245;
+  box-shadow: 0 0 10px rgba(160, 34, 69, 0.6), 0 0 20px rgba(94, 59, 132, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(94, 59, 132, 0.2),
+    rgba(160, 34, 69, 0.2)
+  );
+}
+
+/* Glossy shine animation */
+.main__genre-card::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -75px;
+  width: 50px;
+  height: 155px;
+  background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.3));
+  opacity: 0.2;
+  transform: rotate(35deg);
+  transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 1;
+}
+
+.main__genre-card:hover::after {
+  left: 120%;
+  opacity: 0.4;
+}
+
+.main__genre-name {
+  font-size: 2.3rem;
+}
+
+/* artist container */
+.main__artist-container {
+  display: none;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.main__artist-heading {
+  font-size: 2.2rem;
+  margin-top: 10px;
+  max-width: 70%;
+}
+
+.main__genre-heading-grid {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.main__artist-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 150px;
+  height: 170px;
+  max-width: 100%;
+  background: transparent;
+}
+.main__artist-card:hover {
+  background-color: rgba(113, 112, 112, 0.097);
+}
+
+.main__artist-card-inner {
+}
+
+.main__artist-img {
+  display: flex;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #844c3b;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.main__artist-name {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-weight: 500;
+  color: rgb(180, 173, 173);
+}
+
+.main__artist-play--hover {
+  margin: 0 auto;
+  align-self: self-end;
+  fill: rgb(252, 206, 0);
+  background: linear-gradient(135deg, #5e3b84, #a02245, #7c2b61);
+  box-shadow: 0 0 6px #7c2b6159, 0 0 10px #a0224648, 0 0 14px #5e3b8460;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 6px;
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.main__artist-play--hover:active {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.main__artist-play--hover:hover {
+  filter: brightness(1.2);
 }

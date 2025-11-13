@@ -162,14 +162,42 @@
           </div>
         </div>
       </div>
-      <!-- explore part -->
-      <div class="main__explore-container fade-in">bdsdsd</div>
 
       <!-- genre part -->
       <div class="main__genre-container fade-in">
-        <h1 class="main__genre-heading">Genre</h1>
-        <div class="main__genre-card">
-          <h2 class="main__genre-name">Pop</h2>
+        <h1 class="main__genre-heading">Find the right genre for you!</h1>
+        <div class="main__genre-heading-grid">
+          <div class="main__genre-card">
+            <h2 class="main__genre-name main__genre-card--pop">Pop</h2>
+          </div>
+          <div class="main__genre-card main__genre-card--rock">
+            <h2 class="main__genre-name">rock</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- artist part -->
+      <div class="main__artist-container fade-in">
+        <h1 class="main__artist-heading">
+          Listen to your favorite artist here!
+        </h1>
+        <div class="main__genre-heading-grid">
+          <div class="main__artist-card">
+            <div class="main__artist-card-inner">
+              <div class="main__artist-img">
+                <div class="main__artist-play--hover">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                    <path
+                      d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h2 class="main__artist-name">Name</h2>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -193,23 +221,6 @@
             </div>
           </li>
 
-          <li class="main__list-item" data-target="explore">
-            <svg
-              class="header__icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 640 640"
-            >
-              <path
-                d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"
-                fill="url(#iconGradient)"
-              />
-            </svg>
-            <div class="main__nav-info">
-              <div class="main__nav-name">Explore</div>
-              <div class="main__nav-desc">Discover new nysuc and artist</div>
-            </div>
-          </li>
-
           <li class="main__list-item" data-target="genre">
             <svg
               class="header__icon header__icon--active"
@@ -224,6 +235,53 @@
             <div class="main__nav-info">
               <div class="main__nav-name">Genres</div>
               <div class="main__nav-desc">Rock, Pop, OPM, Kpop and more</div>
+            </div>
+          </li>
+
+          <li class="main__list-item" data-target="artist">
+            <svg
+              class="header__icon header__icon--active"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+            >
+              <path
+                fill="url(#iconGradient)"
+                d="M242.646,141.06L76.41,324.636c-15.446,17.081-14.804,43.256,1.48,59.531l5.742,5.731
+       c16.274,16.284,42.468,16.946,59.54,1.49l183.576-166.237c-19.471-5.401-37.855-15.705-53.136-30.975
+       C258.351,178.906,248.037,160.531,242.646,141.06z"
+              ></path>
+
+              <path
+                fill="url(#iconGradient)"
+                d="M284.185,456.329l-0.248-0.249c0,0,0,0-0.021-0.01l-0.103-0.114c-0.269-0.217-0.456-0.382-0.58-0.528
+       c-15.27-14.898-35.104-22.388-54.916-22.388c-20.072,0-40.277,7.698-55.599,23.03l-22.285,22.264
+       c-10.056,10.077-23.144,15.064-36.334,15.064c-13.16,0.042-26.258-4.965-36.314-15.042c0,0,0,0-0.021-0.021
+       c-10.035-10.035-15.042-23.112-15.042-36.292c0-13.201,5.008-26.279,15.064-36.356l-13.139-13.128
+       c-26.144,26.143-27.22,67.796-3.332,95.233l-0.062,0.332l3.394,3.383c6.828,6.828,14.711,11.918,23.154,15.364
+       c8.401,3.434,17.36,5.132,26.299,5.132c17.868,0,35.838-6.88,49.474-20.506l22.285-22.295
+       c11.773-11.722,27.065-17.536,42.459-17.557c13.605,0,27.168,4.572,38.238,13.74l-0.766,2.121l5.979,2.803
+       c9.85,10.316,15.354,23.216,16.399,36.5l18.529-1.468c-1.427-17.826-8.938-35.279-22.471-48.895
+       C284.206,456.401,284.206,456.34,284.185,456.329z"
+              ></path>
+
+              <path
+                fill="url(#iconGradient)"
+                d="M436.807,31.001C395.94-9.843,329.976-10.34,288.562,29.584c-0.549,0.445-1.024,0.921-1.521,1.418
+       c-4.128,4.138-7.821,8.505-11.111,13.119c-29.827,41.393-26.112,99.424,11.111,136.658c37.235,37.235,95.244,40.918,136.607,11.101
+       c4.594-3.269,9.011-6.994,13.139-11.132c0.497-0.497,0.994-0.983,1.448-1.542C478.149,137.77,477.673,71.858,436.807,31.001z
+       M361.904,182.795c-19.74-0.02-39.387-7.469-54.399-22.491c-15.022-15.022-22.492-34.679-22.512-54.419
+       c0-12.539,3.042-25.12,9.146-36.397c14.422,18.985,30.686,37.607,48.635,55.558c17.939,17.95,36.572,34.214,55.516,48.688
+       C386.961,179.816,374.463,182.795,361.904,182.795z
+       M416.342,160.304c-0.703,0.714-1.448,1.387-2.162,2.049
+       c-19.884-14.774-39.49-31.658-58.278-50.447c-18.808-18.808-35.693-38.382-50.487-58.268c0.683-0.745,1.356-1.49,2.069-2.193
+       c15.033-14.971,34.68-22.471,54.44-22.471c19.74,0.01,39.387,7.47,54.419,22.502c15.002,15.012,22.461,34.648,22.492,54.388
+       C438.835,125.625,431.344,145.292,416.342,160.304z"
+              ></path>
+            </svg>
+
+            <div class="main__nav-info">
+              <div class="main__nav-name">Artists</div>
+              <div class="main__nav-desc">Listen to your favorite artists</div>
             </div>
           </li>
 

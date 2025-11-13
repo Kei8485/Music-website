@@ -53,7 +53,7 @@ navItems.forEach((item) => {
     views.forEach((view) => {
       view.classList.remove(
         "main__home-container--active",
-        "main__explore-container--active",
+        "main__artist-container--active" /* add ung mga category sa nav main */,
         "main__genre-container--active"
       );
       console.log("dusgdhsa");
@@ -72,9 +72,11 @@ navItems.forEach((item) => {
   });
 });
 
-// home controls
+// home play button hovering/
 const playlistCards = document.querySelectorAll(".main__recent-card");
 const playlistHover = document.querySelector(".main__recent-play--hover");
+const artistCards = document.querySelectorAll(".main__artist-card");
+const artistCardHover = document.querySelector(".main__artist-play--hover");
 
 playlistCards.forEach((card) => {
   card.addEventListener("mouseenter", () => {
@@ -83,6 +85,16 @@ playlistCards.forEach((card) => {
 
   card.addEventListener("mouseleave", () => {
     playlistHover.style.display = "none";
+  });
+});
+
+artistCards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    artistCardHover.style.display = "block";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    artistCardHover.style.display = "none";
   });
 });
 
