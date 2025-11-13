@@ -36,14 +36,6 @@ const headerInput = document.querySelector(".header__input");
 const inputWrap = document.querySelector(".header__input-wrapper");
 const headerIcons = document.querySelectorAll(".header__icon");
 
-function searchAnimation() {
-  headerInput.style.display = "block";
-}
-
-function removeSearch() {
-  headerInput.style.display = "none";
-}
-
 headerInput.addEventListener("click", () => {
   inputWrap.style.filter = "brightness(1.5)";
 });
@@ -70,12 +62,6 @@ navItems.forEach((item) => {
 
     if (selectedView) {
       selectedView.classList.add("active");
-    }
-
-    if (!selectedView.contains(mainExploreContainer)) {
-      removeSearch();
-    } else {
-      searchAnimation();
     }
 
     if (navMenu.classList.contains("main__nav--active")) {
