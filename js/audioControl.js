@@ -28,8 +28,6 @@ searchIcon.addEventListener("click", () => {
     view.classList.remove("active");
   });
 
-  searchAnimation();
-
   searchContainer.classList.add("active");
 });
 
@@ -39,14 +37,10 @@ const inputWrap = document.querySelector(".header__input-wrapper");
 const headerIcons = document.querySelectorAll(".header__icon");
 
 function searchAnimation() {
-  inputWrap.classList.add("header__input-wrapper--active");
-  searchIcon.classList.add("header__icon--active");
   headerInput.style.display = "block";
 }
 
 function removeSearch() {
-  inputWrap.classList.remove("header__input-wrapper--active");
-  searchIcon.classList.remove("header__icon--active");
   headerInput.style.display = "none";
 }
 
@@ -116,13 +110,10 @@ icon.addEventListener("click", () => {
   const line2 = icon.querySelector(".line2");
 
   if (!icon.classList.contains("active")) {
-    // ➕ to ✅
     icon.classList.add("animate-border-green");
     icon.classList.add("active");
 
     savedIcon.style.display = "none";
-
-    // hide check mark after animation ends (0.8s)
     setTimeout(() => {
       line1.style.opacity = "0";
       line2.style.opacity = "0";
@@ -136,15 +127,12 @@ icon.addEventListener("click", () => {
       requestAnimationFrame(() => (savedIcon.style.opacity = "1"));
     }, 900);
   } else {
-    // ✅ to ➕
     icon.classList.add("animate-border-red");
     icon.classList.remove("active");
 
-    // show lines back for plus
     line1.style.opacity = "1";
     line2.style.opacity = "1";
 
-    // hide SVG
     savedIcon.style.opacity = "0";
     setTimeout(() => {
       savedIcon.style.display = "none";

@@ -319,55 +319,16 @@ header {
   object-fit: cover;
 }
 
-/* input */
-.header__icon.search-active {
-  width: 15px;
-  height: 15px;
+/* cons */
+
+.header__icons-container,
+.header__profile-container,
+.header__logo-container {
+  align-self: center;
 }
 
-#searchIcon {
-  width: 25px;
-  height: 25px;
-}
-
-.header__input--active {
-  display: block;
-}
-
-.header__input {
-  background: none;
-  outline: none;
-  border: none;
-  color: white;
+.header__icons-container {
   display: flex;
-  width: 100%;
-  padding-left: 10px;
-  display: none;
-  transition: width 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-}
-
-.header__input-wrapper {
-  display: flex;
-  opacity: 1;
-}
-
-.header__input-wrapper:hover {
-  filter: brightness(1.5);
-}
-
-.header__input-wrapper--active {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  width: 200px;
-  outline: none;
-  color: white;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  background: linear-gradient(135deg, #5e3b84, #a02245, #7c2b61) border-box;
-  box-shadow: 0 0 0 100vmax #000000e1 inset;
-  transition: width 0.4s ease, opacity 0.3s ease;
-  overflow: hidden;
 }
 
 .header__icon {
@@ -376,10 +337,71 @@ header {
   width: 28px;
   height: 28px;
   cursor: pointer;
+  padding: 0;
   transition: transform 0.3s ease;
 }
+/* input */
 
-/* edit ^^^^ */
+.header__input-wrapper {
+  --size: 43px;
+  --expanding-width: 220px;
+
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+  border-radius: 100px;
+  overflow: hidden;
+
+  width: var(--size);
+  max-width: 100%;
+  transition: width 0.5s;
+
+  /* Removed border entirely */
+  z-index: 1;
+}
+
+.header__input {
+  font-size: 1rem;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-inline: 1rem;
+  flex: auto;
+
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.header__input-wrapper:focus-within .header__input {
+  opacity: 1;
+}
+
+.header__input-wrapper:focus-within {
+  width: var(--expanding-width);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #5e3b84, #a02245, #7c2b61) border-box;
+  box-shadow: 0 0 0 100vmax #000000e1 inset;
+}
+
+.header__search-icon {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.header__input-wrapper:hover {
+  filter: brightness(1.5);
+}
 
 .header__profile-name {
   color: white;
@@ -394,19 +416,6 @@ header {
   height: 100px;
   width: 100px;
   align-self: first baseline;
-}
-
-.header__icons-container,
-.header__profile-container,
-.header__logo-container {
-  align-self: center;
-}
-
-.header__icons-container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
 }
 
 .header__icon:hover {

@@ -509,11 +509,12 @@ main {
   transition: all 0.3s ease;
 }
 
+/* explore container */
+.main__explore-container {
+}
+
 /* genre container */
 
 .main__genre-container {
-}
-
-/* explore container */
-.main__explore-container {
+  display: grid;
 }
